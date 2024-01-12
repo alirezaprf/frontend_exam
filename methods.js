@@ -1,9 +1,10 @@
+//set cookie
 function setCookie(name, value, days) {
 	const expires = new Date();
 	expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
 	document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
 }
-
+//get cookies
 function getCookie(name) {
 	const cookieName = `${name}=`;
 	const decodedCookie = decodeURIComponent(document.cookie);
@@ -35,24 +36,26 @@ function getLocalStorageItem(key) {
 function removeLocalStorageItem(key) {
 	localStorage.removeItem(key);
 }
-
+//save user input data 
 function saveData() {
 	const name = getValue("name");
 	const male = getChecked("male");
 	const female = getChecked("female");
 	const value = male ? 0 : (female ? 1 : null);
 	if (value != null) {
-		setLocalStorageItem(name, value);
+		setLocalStorageItem(name, value); // save in local storage
     console.log("saved")
 	}
 }
-
+//set error label
 function vay_error(err){
   document.getElementById('error_label').innerHTML = err
 }
-
+//check gender from api 
 function submitData() {
 	const name = getValue("name")
+
+	//using fetch to call the api and then transform json to  object and user gender & probability valuse  
   fetch(`https://api.genderize.io/?name=${name}`)
         .then(response => {
           if (!response.ok) {
@@ -88,7 +91,7 @@ function submitData() {
           // Introduce a 1-second delay using setTimeout
           setTimeout(() => {
             console.log('1-second timeout completed.');
-          }, 2000);
+          }, 1000);
         });
 
 	console.log("Data submitted");
@@ -106,6 +109,7 @@ function getValue(name) {
 function getChecked(name) {
 	return document.getElementById(name).checked;
 }
+//clear results to its initial state
 function clearResults(){
   setValue("prediction", "not found");
   setValue("prediction_val_label", "");
@@ -121,7 +125,7 @@ function clearPrediction() {
   clearResults()
 
 }
-
+//input change
 function ontextChange() {
 	const name = document.getElementById("name").value;
 	console.log();
@@ -131,6 +135,9 @@ function ontextChange() {
 	if (cookie_value != null || localStorage_value != null) {
     console.log("found");
     console.log(cookie_value , localStorage_value)
+	/* -------------------------------------------------------------------------- */
+	/*               check local storage and cookies to find a match              */
+	/* -------------------------------------------------------------------------- */
 		if (cookie_value === 0 || localStorage_value === 0) {
 			setValue("prediction", "Saved Answer");
 			setChecked("male", true);

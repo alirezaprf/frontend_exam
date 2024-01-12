@@ -1,76 +1,93 @@
+/* Set background and font for the entire page */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: url('back.jpg') no-repeat center center fixed;
-    background-size: cover;
-    overflow: hidden;
-  }
+  margin: 0;
+  font-family: Arial, sans-serif; 
+  background: url('back.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
 
-  .container {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-  }
+/* Center the content vertically and horizontally */
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
 
-  .white-box {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+/* Style for the main white box in the center */
+.white-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
 
-  .form-section {
-    display: flex;
-    flex-direction: column;
-  }
+/* Flex layout for the form section */
+.form-section {
+  display: flex;
+  flex-direction: column;
+}
 
-  label {
-    margin-bottom: 8px;
-  }
+/* Styling for labels in the form */
+label {
+  margin-bottom: 8px;
+}
 
-  input {
-    padding: 8px;
-    margin-bottom: 16px;
-  }
+/* Styling for input fields in the form */
+input {
+  padding: 8px;
+  margin-bottom: 16px;
+}
 
-  .button-container {
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
-  }
+/* Flex layout for the button container */
+.button-container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
 
-  .prediction-section {
-    display: flex;
-    flex-direction: column;
-  }
+/* Flex layout for the prediction section */
+.prediction-section {
+  display: flex;
+  flex-direction: column;
+}
 
-  .text-box {
-    padding: 8px;
-    margin-bottom: 16px;
-  }
+/* Styling for text boxes */
+.text-box {
+  padding: 8px;
+  margin-bottom: 16px;
+}
 
-  .clear-button {
-    padding: 8px;
-    cursor: pointer;
-  }
-  .text-box-container {
-    position: relative;
-  }
-  .text-box {
-    padding: 8px;
-    margin-bottom: 16px;
-    height: 100px; /* Set the desired height */
-  }
+/* Styling for the clear button */
+.clear-button {
+  padding: 8px;
+  cursor: pointer;
+}
 
-  .clear-button {
-    position: absolute;
-    bottom: 25px;
-    left: 5px;
-    padding: 5px;
-    cursor: pointer;
-  }
-  .error-label{
-      color: red;
-  }
+/* Positioning for the text box container */
+.text-box-container {
+  position: relative;
+}
+
+/* Additional styling for text boxes within the container */
+.text-box {
+  padding: 8px;
+  margin-bottom: 16px;
+  height: 100px;
+}
+
+/* Positioning and styling for the clear button within the container */
+.clear-button {
+  position: absolute;
+  bottom: 25px;
+  left: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+/* Styling for error labels */
+.error-label{
+  color: red;
+}
